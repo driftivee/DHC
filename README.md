@@ -1,4 +1,12 @@
-# ধক
-A lightweight hey-like HTTP load testing tool written in Python with Termux support. 
-Benchmark your own sites with concurrent requests, fast and simple.
-termux load-testing python-tool benchmark performance-testing async http hey-clone
+# ⚡ Simple Load Testing Tool (hey clone for Termux)
+
+A lightweight **HTTP load testing tool** built in Python.  
+It works on **Termux, Linux, macOS, and Windows**.
+
+---
+
+## 📦 Installation
+```bash
+git clone https://github.com/driftivee/DHC.git
+cd DHC
+pip install -r requirements.txt
