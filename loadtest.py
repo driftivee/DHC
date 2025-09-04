@@ -2,29 +2,22 @@ import os
 import asyncio
 import aiohttp
 import time
+import pyfiglet
+from termcolor import colored
 
 # =====================
-# সুন্দর Banner Function
+# Banner Function
 # =====================
 def banner():
     os.system("clear")
-    print("="*60)
-    print("     🚀 Driftivee Load Testing Tool 🚀")
-    print("="*60)
-    print(r"""
-                                                                                                                
-,--------.             ,--.                   ,---.      ,---.     ,--.       ,--.                         
-'--.  .--',---.  ,---. |  | ,---.      ,---. /  .-'     /  O  \  ,-|  |,--.--.`--',--. ,--.,--,--.,--,--,  
-   |  |  | .-. || .-. ||  |(  .-'     | .-. ||  `-,    |  .-.  |' .-. ||  .--',--. \  '  /' ,-.  ||      \ 
-   |  |  ' '-' '' '-' '|  |.-'  `)    ' '-' '|  .-'    |  | |  |\ `-' ||  |   |  |  \   ' \ '-'  ||  ||  | 
-   `--'   `---'  `---' `--'`----'      `---' `--'      `--' `--' `---' `--'   `--'.-'  /   `--`--'`--''--' 
-                                                                                  `---'                    
-    """)
-    print("                Created by: Driftivee ❤️\n")
+    ascii_banner = pyfiglet.figlet_format("Driftivee Tool")
+    print(colored(ascii_banner, "cyan"))
+    print(colored("                Created by: Driftivee ❤️", "yellow"))
+    print("=" * 60)
     print(" [1] Owner Contact")
     print(" [2] Load Tester")
     print(" [0] Exit")
-    print("="*60)
+    print("=" * 60)
 
 # =====================
 # Load Testing Function
@@ -49,9 +42,10 @@ async def run_load_test(url, num_requests, concurrency):
 
     success = sum(1 for r in results if r == 200)
     fail = sum(1 for r in results if r is None)
-    print(f"\n✅ Completed in {end_time - start_time:.2f} seconds")
-    print(f"✔️ Success: {success}")
-    print(f"❌ Failed: {fail}\n")
+
+    print(colored(f"\n✅ Completed in {end_time - start_time:.2f} seconds", "cyan"))
+    print(colored(f"✔️ Success: {success}", "green"))
+    print(colored(f"❌ Failed: {fail}\n", "red"))
 
 # =====================
 # Main Menu
@@ -61,7 +55,7 @@ def main():
         banner()
         choice = input("Select an option: ")
         if choice == "1":
-            print("\n📧 Contact: driftivepqy@gmail.com\n")
+            print(colored("\n📧 Contact: driftivepqy@gmail.com\n", "yellow"))
             input("Press Enter to go back...")
         elif choice == "2":
             url = input("\n🌐 Enter target URL: ")
@@ -70,10 +64,10 @@ def main():
             asyncio.run(run_load_test(url, num_requests, concurrency))
             input("Press Enter to go back...")
         elif choice == "0":
-            print("\n👋 Exiting... Goodbye!\n")
+            print(colored("\n👋 Exiting... Goodbye!\n", "magenta"))
             break
         else:
-            print("\n❌ Invalid option! Try again.\n")
+            print(colored("\n❌ Invalid option! Try again.\n", "red"))
             input("Press Enter to continue...")
 
 if __name__ == "__main__":
