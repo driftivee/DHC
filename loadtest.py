@@ -6,16 +6,16 @@ import pyfiglet
 from termcolor import colored
 
 # =====================
-# সুন্দর Banner Function
+# Banner Function
 # =====================
 def banner():
     os.system("clear")
     ascii_banner = pyfiglet.figlet_format("TOOLS OF ADRIYAN LAMO")
     print(colored(ascii_banner, "cyan"))
-    print("                Created by: MOSTAKIM ❤️q\n")
+    print("                Created by: Mostakim ❤️\n")
     print("=" * 60)
     print(" [1] Owner Contact")
-    print(" [2] ATTACK")
+    print(" [2] Load Tester")
     print(" [0] Exit")
     print("=" * 60)
 
