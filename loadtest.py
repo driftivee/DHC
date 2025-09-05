@@ -6,16 +6,16 @@ import pyfiglet
 from termcolor import colored
 
 # =====================
-# Banner Function
+# সুন্দর Banner Function
 # =====================
 def banner():
     os.system("clear")
-    ascii_banner = pyfiglet.figlet_format("Driftivee Tool")
+    ascii_banner = pyfiglet.figlet_format("TOOLS OF ADRIYAN LAMO")
     print(colored(ascii_banner, "cyan"))
-    print(colored("                Created by: Driftivee ❤️", "yellow"))
+    print("                Created by: MOSTAKIM ❤️q\n")
     print("=" * 60)
     print(" [1] Owner Contact")
-    print(" [2] Load Tester")
+    print(" [2] ATTACK")
     print(" [0] Exit")
     print("=" * 60)
 
@@ -42,10 +42,9 @@ async def run_load_test(url, num_requests, concurrency):
 
     success = sum(1 for r in results if r == 200)
     fail = sum(1 for r in results if r is None)
-
-    print(colored(f"\n✅ Completed in {end_time - start_time:.2f} seconds", "cyan"))
-    print(colored(f"✔️ Success: {success}", "green"))
-    print(colored(f"❌ Failed: {fail}\n", "red"))
+    print(f"\n✅ Completed in {end_time - start_time:.2f} seconds")
+    print(f"✔️ Success: {success}")
+    print(f"❌ Failed: {fail}\n")
 
 # =====================
 # Main Menu
@@ -55,7 +54,7 @@ def main():
         banner()
         choice = input("Select an option: ")
         if choice == "1":
-            print(colored("\n📧 Contact: driftivepqy@gmail.com\n", "yellow"))
+            print("\n📧 Contact: driftivepqy@gmail.com\n")
             input("Press Enter to go back...")
         elif choice == "2":
             url = input("\n🌐 Enter target URL: ")
@@ -64,10 +63,10 @@ def main():
             asyncio.run(run_load_test(url, num_requests, concurrency))
             input("Press Enter to go back...")
         elif choice == "0":
-            print(colored("\n👋 Exiting... Goodbye!\n", "magenta"))
+            print("\n👋 Exiting... Goodbye!\n")
             break
         else:
-            print(colored("\n❌ Invalid option! Try again.\n", "red"))
+            print("\n❌ Invalid option! Try again.\n")
             input("Press Enter to continue...")
 
 if __name__ == "__main__":
